@@ -1,2 +1,4 @@
 xlrd
 xlsxwriter
+beautifulsoup4
+requests
