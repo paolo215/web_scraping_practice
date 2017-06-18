@@ -1,4 +1,8 @@
 xlrd
 xlsxwriter
-beautifulsoup4
+bs4
+fake_useragent
 requests
+lxml
+selenium
+
