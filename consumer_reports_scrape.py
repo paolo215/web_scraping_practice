@@ -22,9 +22,13 @@ fileObj.close()
 
 bsoup = BeautifulSoup(contents, "lxml")
 
-all_divs = bsoup.find_all("div", attrs={"class": "entry-letter"})
+products = {}
 
-for div in all_divs:
-    print(div.div.a.span.string)
+products = {div.div.a.span.string: div.div.a["href"] for div in bsoup.find_all("div", class_="entry-letter")}
+
+
+for key, value in products.items():
+    print(key, value)    
+
 
 
