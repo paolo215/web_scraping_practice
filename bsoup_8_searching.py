@@ -35,4 +35,7 @@ def has_class(tag):
 
 
 
+# Passing in attrs
+# print(bsoup.find_all("p", attrs={"style" : "color: red;"}))
+
 
