@@ -9,11 +9,17 @@ from xlsxwriter import Workbook
 # Goal: Extract the name of the problem, description, and examples
 
 def scrape():
+    # Set up fake user agent
     user_agent = UserAgent()
     headers = {"headers" : user_agent.chrome}
+
+
+    # Get contents of codingbat.com/java page
     main_url = "http://codingbat.com"
     codingbat_java_contents = requests.get(main_url + "/java", headers=headers).content
     bsoup_codingbat_java = BeautifulSoup(codingbat_java_contents, "lxml")
+
+    # All sections have 'summ' class
     divs_summ = bsoup_codingbat_java.find_all("div", class_="summ")
 
     challenges = []
@@ -78,6 +84,8 @@ def write_to_excel(data):
     worksheet.write(0, 1, "Description")
     worksheet.write(0, 2, "URL")
     worksheet.write(0, 3, "Questions")
+
+    # Data
     for i in range(len(data)):
         challenge = data[i]
         for j in range(len(challenge)):
