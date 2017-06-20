@@ -68,7 +68,7 @@ def scrape():
                 if regex.match(child.encode("utf-8")):
                     java_question_examples.append(child)
 
-            data = [java_question_title, java_question_description, java_url] + java_question_examples
+            data = [java_question_title, java_question_description, main_url + java_url] + java_question_examples
             challenges.append(data)
 
     return challenges
