@@ -39,3 +39,16 @@ def has_class(tag):
 # print(bsoup.find_all("p", attrs={"style" : "color: red;"}))
 
 
+
+# Search tag with given string
+tags = bsoup.find_all(string=re.compile("First"))
+
+# Use kwargs
+tags = bsoup.find_all(class_="first")
+
+
+# Recursive search
+title = bsoup.find_all("title", recursive=True)
+
+
+
