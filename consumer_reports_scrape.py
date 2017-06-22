@@ -22,7 +22,8 @@ def prep():
 
 
 
-# prep()
+if not os.path.exists(filename):
+    prep()
 
 fileObj = open(filename, "r")
 contents = fileObj.read()

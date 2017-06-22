@@ -1,3 +1,9 @@
 *.pyc
 *.swp
 *.xlsx
+*.xml
+*.iml
+*.zip
+chromedriver/
+consumer_reports.txt
+
